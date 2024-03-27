@@ -9,5 +9,5 @@ import com.example.book.book.Models.Book;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
-    List<Book> findByJudulIgnoreCase(String judul);
+    List<Book> findByJudulContainingIgnoreCase(String judul);
 }

@@ -19,7 +19,7 @@ public class BookService {
     }
 
     public List<Book> search(String keyword) {
-        return bookRepository.findByJudulIgnoreCase(keyword);
+        return bookRepository.findByJudulContainingIgnoreCase(keyword);
     }
 
     public void create(Book book) {
