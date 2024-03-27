@@ -35,6 +35,12 @@ public class BookController {
         }
     }
 
+    @GetMapping("/{id}")
+    public Response getOne(@PathVariable Long id) {
+        return new Response(HttpStatus.CREATED, "berhasil menambah buku", bookService.findById(id));
+
+    }
+
     @PostMapping("")
     public Response create(@RequestBody Book book) {
         bookService.create(book);

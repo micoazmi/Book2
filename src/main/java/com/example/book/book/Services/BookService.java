@@ -1,12 +1,15 @@
 package com.example.book.book.Services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.book.book.Models.Book;
 import com.example.book.book.Repositorys.BookRepository;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class BookService {
@@ -16,6 +19,10 @@ public class BookService {
 
     public List<Book> list() {
         return bookRepository.findAll();
+    }
+
+    public Optional<Book> findById(Long id) {
+        return bookRepository.findById(id);
     }
 
     public List<Book> search(String keyword) {
